@@ -59,6 +59,6 @@ class NetworkNodeUpdateAPIView(generics.UpdateAPIView):
 
     def update(self, request, *args, **kwargs):
         """Запрещаем обновление поля задолженность"""
-        if 'debt' in request.data:
+        if 'debt_to_supplier' in request.data:
             del request.data['debt_to_supplier']
         return super().update(request, *args, **kwargs)
