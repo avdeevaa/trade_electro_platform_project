@@ -25,7 +25,7 @@ class Supplier(models.Model):
     house_number = models.CharField(max_length=10, verbose_name="номер дома")
 
     def __str__(self):
-        return self.name, self.email
+        return self.name
 
     class Meta:
         verbose_name = 'Поставщик'

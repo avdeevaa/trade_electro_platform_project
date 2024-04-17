@@ -14,7 +14,7 @@ class SupplierListAPIView(generics.ListAPIView):
     """ Просматриваем всех поставщиков и настраиваем фильтр по стране"""
     serializer_class = SupplierSerializer
     queryset = Supplier.objects.all()
-    filter_backends = [filters.SearchFilter, filters.DjangoFilterBackend]
+    filter_backends = [filters.SearchFilter, filters.BaseFilterBackend]
     search_fields = ['country']
     filterset_fields = ['country']
 
@@ -47,7 +47,7 @@ class NetworkNodeListAPIView(generics.ListAPIView):
     """ Просматриваем все звенья сети и настраиваем фильтр по стране"""
     serializer_class = NetworkNodeSerializer
     queryset = NetworkNode.objects.all()
-    filter_backends = [filters.SearchFilter, filters.DjangoFilterBackend]
+    filter_backends = [filters.SearchFilter, filters.BaseFilterBackend]
     search_fields = ['contacts_country']
     filterset_fields = ['contacts_country']
 
